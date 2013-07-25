@@ -1,6 +1,9 @@
 /* jshint node: true */
 'use strict';
 
+var themeBase = ''; // http://damonoehlman.github.io/demo-console/';
+var reSpace = /\s/;
+
 /**
 # demo-console
 
@@ -18,7 +21,7 @@ function DemoConsole() {
 }
 
 // export
-module.exports = DemoConsole;
+module.exports = new DemoConsole();
 
 /**
 ## log(data)
@@ -50,14 +53,22 @@ console.log({ name: 'Damon' });
 ```
 
 **/
-DemoConsole.prototype.log = function() {
-  // initialise items if required
-  this.items = this.items || initConsole();
+DemoConsole.prototype.log = function(data) {
+  var item = document.createElement('li');
+  var items = this.items = this.items || initConsole();
 
   // initialise the theme if not initialised
   this.theme = this.theme || initTheme();
 
-  // add the item
+  // initialise the item
+  item.innerHTML = renderData(data);
+
+  // add to the list
+  items.appendChild(item);
+
+  setTimeout(function() {
+    items.parentNode.scrollTop = items.offsetHeight;
+  }, 100);
 };
 
 /**
@@ -86,11 +97,11 @@ function initConsole() {
   list = document.createElement('ul');
 
   // initialise stuff
-  el.class = 'democonsole';
-  el.appendChild(list);
+  container.className = 'democonsole';
+  container.appendChild(list);
 
   // add the console to the dom
-  document.body.appendChild(el);
+  document.body.appendChild(container);
 
   return list;
 }
@@ -107,11 +118,66 @@ function initTheme(theme) {
   stylesheet = document.createElement('link');
   stylesheet.id = 'democonsole-theme';
   stylesheet.setAttribute('rel', 'stylesheet');
-  stylesheet.setAttribute('href', 'http://damonoehlman.github.io/demo-console/themes/' + (theme || 'default') + '.css');
+  stylesheet.setAttribute('href', themeBase + 'themes/' + (theme || 'default') + '.css');
 
   // add to the dom
   document.head.appendChild(stylesheet);
 
   // return the stylesheet
   return stylesheet;
+}
+
+function renderData(data) {
+  function extractData(key) {
+    var hasSpace = reSpace.test(key);
+    var quoteChar = hasSpace ? '\'' : '';
+
+    return '<div data-type="object-key">' + 
+      span(quoteChar + key + quoteChar + ': ', 'key') +
+      renderData(data[key]) +
+      '</div>';
+  }
+
+  if (typeof data == 'undefined') {
+    return span('undefined', 'undefined');
+  }
+  if (data === true || data === false) {
+    return span(data, 'boolean');
+  }
+  else if (Array.isArray(data)) {
+    return span('[') + data.map(renderData).join(', ') + span(']');
+  }
+  else if (typeof data == 'string' || (data instanceof String)) {
+    return span('\'' + data + '\'', 'string');
+  }
+  else if (data === null) {
+    return span('null', 'null');
+  }
+  else if (data instanceof Window) {
+    return span('window', 'window');
+  }
+  else if (data instanceof DocumentType) {
+    return 'doctype: ' + data.name;
+  }
+  else if (data instanceof HTMLCollection) {
+    return span('[]', 'html-collection');
+  }
+  else if (data instanceof HTMLDocument) {
+    return [].slice.call(document.childNodes).map(renderData);
+  }
+  else if (data instanceof HTMLElement) {
+    return data.tagName;
+  }
+  else if (typeof data == 'object') {
+    return '<div data-type="object">' + span('{') + 
+      Object.keys(data).map(extractData).join('<div class="comma-float">,</div>') + 
+      span('}') + '</div>';
+  }
+  else {
+    return span(data, typeof data);
+  }
+}
+
+function span(content, dataType) {
+  return '<span data-type="' + (dataType || '') + '">' + content + '</span>';
 }
