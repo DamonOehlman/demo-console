@@ -1,10 +1,10 @@
 {
   "name": "demo-console",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "A demonstration console for browser demos (useful for working with requirebin)",
   "main": "index.js",
   "scripts": {
-    "test": "node test/all.js"
+    "gendocs": "$(npm bin)/emu < index.js > README.md"
   },
   "repository": {
     "type": "git",
@@ -19,9 +19,6 @@
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/DamonOehlman/demo-console/issues"
-  },
-  "scripts": {
-    "gendocs": "$(npm bin)/emu < index.js > README.md"
   },
   "dependencies": {},
   "devDependencies": {
