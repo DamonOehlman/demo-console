@@ -20,5 +20,11 @@
   "bugs": {
     "url": "https://github.com/DamonOehlman/demo-console/issues"
   },
-  "dependencies": {}
+  "scripts": {
+    "gendocs": "$(npm bin)/emu < index.js > README.md"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "emu": "0.0.2"
+  }
 }

@@ -1,16 +1,15 @@
 # demo-console
 
-Show a demo console when working with [requirebin](http://requirebin.com).
-
-## Using
-
-Just include it in one of your require bin demos like this:
+Show a demo console when working with [requirebin](http://requirebin.com). Just 
+include it in one of your require bin demos like this:
 
 ```js
 var console = require('demo-console');
 ```
 
-Then you can console log stuff in a useful fashion.
+## log(data)
+
+You know, log stuff, like...
 
 Strings:
 
@@ -35,3 +34,7 @@ Objects:
 ```js
 console.log({ name: 'Damon' });
 ```
+
+## useTheme(name)
+
+Tell the demo console that you wish to use a particular theme.
