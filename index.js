@@ -1,7 +1,7 @@
 /* jshint node: true */
 'use strict';
 
-var themeBase = ''; // http://damonoehlman.github.io/demo-console/';
+var themeBase = 'http://damonoehlman.github.io/demo-console/';
 var reSpace = /\s/;
 
 /**
