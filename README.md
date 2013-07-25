@@ -1,6 +1,6 @@
 # demo-console
 
-Show a demo console when working with [requirebin](http://requirebin.com). Just 
+Show a demo console when working with [requirebin](http://requirebin.com/?gist=6079475). Just 
 include it in one of your require bin demos like this:
 
 ```js
