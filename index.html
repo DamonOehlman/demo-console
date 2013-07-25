@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset='utf-8' />
+    <meta http-equiv="X-UA-Compatible" content="chrome=1" />
+    <meta name="description" content="demo-console : A demonstration console for browser demos (useful for working with requirebin)" />
+
+    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
+
+    <title>demo-console</title>
+  </head>
+
+  <body>
+
+    <!-- HEADER -->
+    <div id="header_wrap" class="outer">
+        <header class="inner">
+          <a id="forkme_banner" href="https://github.com/DamonOehlman/demo-console">View on GitHub</a>
+
+          <h1 id="project_title">demo-console</h1>
+          <h2 id="project_tagline">A demonstration console for browser demos (useful for working with requirebin)</h2>
+
+            <section id="downloads">
+              <a class="zip_download_link" href="https://github.com/DamonOehlman/demo-console/zipball/master">Download this project as a .zip file</a>
+              <a class="tar_download_link" href="https://github.com/DamonOehlman/demo-console/tarball/master">Download this project as a tar.gz file</a>
+            </section>
+        </header>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div id="main_content_wrap" class="outer">
+      <section id="main_content" class="inner">
+        <h1>
+<a name="demo-console" class="anchor" href="#demo-console"><span class="octicon octicon-link"></span></a>demo-console</h1>
+
+<p>Show a demo console when working with <a href="http://requirebin.com">requirebin</a>.</p>
+
+<h2>
+<a name="using" class="anchor" href="#using"><span class="octicon octicon-link"></span></a>Using</h2>
+
+<p>Just include it in one of your require bin demos like this:</p>
+
+<div class="highlight"><pre><span class="kd">var</span> <span class="nx">console</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'demo-console'</span><span class="p">);</span>
+</pre></div>
+
+<p>Then you can console log stuff in a useful fashion.</p>
+
+<p>Strings:</p>
+
+<div class="highlight"><pre><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'hello'</span><span class="p">);</span>
+</pre></div>
+
+<p>Numbers:</p>
+
+<div class="highlight"><pre><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="mi">5</span><span class="p">);</span>
+</pre></div>
+
+<p>Arrays:</p>
+
+<div class="highlight"><pre><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]);</span>
+</pre></div>
+
+<p>Objects:</p>
+
+<div class="highlight"><pre><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">({</span> <span class="nx">name</span><span class="o">:</span> <span class="s1">'Damon'</span> <span class="p">});</span>
+</pre></div>
+      </section>
+    </div>
+
+    <!-- FOOTER  -->
+    <div id="footer_wrap" class="outer">
+      <footer class="inner">
+        <p class="copyright">demo-console maintained by <a href="https://github.com/DamonOehlman">DamonOehlman</a></p>
+        <p>Published with <a href="http://pages.github.com">GitHub Pages</a></p>
+      </footer>
+    </div>
+
+    
+
+  </body>
+</html>
