@@ -1,0 +1,24 @@
+{
+  "name": "demo-console",
+  "version": "0.0.0",
+  "description": "A demonstration console for browser demos (useful for working with requirebin)",
+  "main": "index.js",
+  "scripts": {
+    "test": "node test/all.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/DamonOehlman/demo-console.git"
+  },
+  "keywords": [
+    "browser",
+    "requirebin",
+    "console"
+  ],
+  "author": "Damon Oehlman <damon.oehlman@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/DamonOehlman/demo-console/issues"
+  },
+  "dependencies": {}
+}
