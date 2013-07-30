@@ -3,6 +3,8 @@
 
 var themeBase = 'http://damonoehlman.github.io/demo-console/';
 var reSpace = /\s/;
+var theme;
+var items;
 
 /**
 # demo-console
@@ -14,14 +16,6 @@ include it in one of your require bin demos like this:
 var console = require('demo-console');
 ```
 **/
-function DemoConsole() {
-  if (! (this instanceof DemoConsole)) {
-    return new DemoConsole(theme);
-  }
-}
-
-// export
-module.exports = new DemoConsole();
 
 /**
 ## log(data)
@@ -53,12 +47,14 @@ console.log({ name: 'Damon' });
 ```
 
 **/
-DemoConsole.prototype.log = function(data) {
+exports.log = function(data) {
   var item = document.createElement('li');
-  var items = this.items = this.items || initConsole();
+
+  // ensure we have items
+  items = items || initConsole();
 
   // initialise the theme if not initialised
-  this.theme = this.theme || initTheme();
+  theme = theme || initTheme();
 
   // initialise the item
   item.innerHTML = renderData(data);
@@ -76,8 +72,8 @@ DemoConsole.prototype.log = function(data) {
 
 Tell the demo console that you wish to use a particular theme.
 **/
-DemoConsole.prototype.useTheme = function(name) {
-  this.theme = initTheme(name);
+exports.useTheme = function(name) {
+  theme = initTheme(name);
 };
 
 /* internals */
