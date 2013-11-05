@@ -4,7 +4,7 @@
   "description": "A demonstration console for browser demos (useful for working with requirebin)",
   "main": "index.js",
   "scripts": {
-    "gendocs": "$(npm bin)/emu < index.js > README.md"
+    "gendocs": "gendocs > README.md"
   },
   "repository": {
     "type": "git",
@@ -22,6 +22,5 @@
   },
   "dependencies": {},
   "devDependencies": {
-    "emu": "0.0.2"
   }
 }
