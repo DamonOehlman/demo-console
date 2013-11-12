@@ -1,6 +1,6 @@
 {
   "name": "demo-console",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A demonstration console for browser demos (useful for working with requirebin)",
   "main": "index.js",
   "scripts": {
@@ -21,6 +21,5 @@
     "url": "https://github.com/DamonOehlman/demo-console/issues"
   },
   "dependencies": {},
-  "devDependencies": {
-  }
+  "devDependencies": {}
 }
