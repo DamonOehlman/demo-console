@@ -1,7 +1,7 @@
 /* jshint node: true */
 'use strict';
 
-var themeBase = '//damonoehlman.github.io/demo-console/';
+var themeBase = '//rawgithub.com/DamonOehlman/demo-console/master/';
 var reSpace = /\s/;
 var theme;
 var items;
