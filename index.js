@@ -1,7 +1,7 @@
 /* jshint node: true */
 'use strict';
 
-var themeBase = 'http://damonoehlman.github.io/demo-console/';
+var themeBase = '//damonoehlman.github.io/demo-console/';
 var reSpace = /\s/;
 var theme;
 var items;
@@ -128,7 +128,7 @@ function renderData(data) {
     var hasSpace = reSpace.test(key);
     var quoteChar = hasSpace ? '\'' : '';
 
-    return '<div data-type="object-key">' + 
+    return '<div data-type="object-key">' +
       span(quoteChar + key + quoteChar + ': ', 'key') +
       renderData(data[key]) +
       '</div>';
@@ -165,8 +165,8 @@ function renderData(data) {
     return data.tagName;
   }
   else if (typeof data == 'object') {
-    return '<div data-type="object">' + span('{') + 
-      Object.keys(data).map(extractData).join('<div class="comma-float">,</div>') + 
+    return '<div data-type="object">' + span('{') +
+      Object.keys(data).map(extractData).join('<div class="comma-float">,</div>') +
       span('}') + '</div>';
   }
   else {
