@@ -50,7 +50,7 @@ var themes = {
   console.log({ name: 'Damon' });
   ```
 **/
-exports.log = function(data) {
+exports.log = function() {
   var item = document.createElement('li');
 
   // ensure we have items
@@ -60,7 +60,7 @@ exports.log = function(data) {
   theme = theme || initTheme();
 
   // initialise the item
-  item.innerHTML = renderData(data);
+  item.innerHTML = [].slice.call(arguments).map(renderData).join(' ');
 
   // add to the list
   items.appendChild(item);
