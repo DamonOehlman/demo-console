@@ -1,6 +1,6 @@
 {
   "name": "demo-console",
-  "version": "1.4.1",
+  "version": "1.5.0",
   "description": "A demonstration console for browser demos (useful for working with requirebin)",
   "main": "index.js",
   "scripts": {
