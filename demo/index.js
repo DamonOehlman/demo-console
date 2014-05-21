@@ -20,3 +20,6 @@ console.log({ a: [1, 2, 3, 4], b: true, c: { d: 'hello', e: false, f: ['a', 'b',
 
 // log a piece of text with additional data
 console.log('hello', { name: 'Damon' });
+
+// check a multiline strine displays as expected
+console.log('hi\nthere');

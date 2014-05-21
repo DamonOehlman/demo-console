@@ -45,6 +45,7 @@ span[data-type="number"], span[data-type="boolean"] {
 
 span[data-type="string"] {
   color: green;
+  white-space: pre;
 }
 
 span[data-type="key"] {
