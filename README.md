@@ -1,42 +1,39 @@
 # demo-console
 
-Show a demo console when working with [requirebin](http://requirebin.com/?gist=6079475). Just 
+Show a demo console when working with [requirebin](http://requirebin.com/?gist=6079475). Just
 include it in one of your require bin demos like this:
-
-```js
-var console = require('demo-console');
-```
 
 
 [![NPM](https://nodei.co/npm/demo-console.png)](https://nodei.co/npm/demo-console/)
 
 
-## log(data)
 
-You know, log stuff, like...
-
-Strings:
+## Example Usage
 
 ```js
+var console = require('demo-console');
+
+// log a simple string
 console.log('hello');
-```
 
-Numbers:
-
-```js
+// log a numeric value
 console.log(5);
-```
 
-Arrays:
-
-```js
+// log an array of values
 console.log([1, 2, 3]);
-```
 
-Objects:
-
-```js
+// log an object
 console.log({ name: 'Damon' });
+
+// log a document (provides high level information only)
+console.log(document);
+
+// log a more complicated document
+console.log({ a: [1, 2, 3, 4], b: true, c: { d: 'hello', e: false, f: ['a', 'b', 'c', 'd'] }});
+
+// log a piece of text with additional data
+console.log('hello', { name: 'Damon' });
+
 ```
 
 ## useTheme(name)
@@ -47,7 +44,7 @@ Tell the demo console that you wish to use a particular theme.
 
 ### MIT
 
-Copyright (c) 2013 Damon Oehlman <damon.oehlman@gmail.com>
+Copyright (c) 2014 Damon Oehlman <damon.oehlman@gmail.com>
 
 Permission is hereby granted, free of charge, to any person obtaining
 a copy of this software and associated documentation files (the

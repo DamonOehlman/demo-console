@@ -16,39 +16,10 @@ var themes = {
   Show a demo console when working with [requirebin](http://requirebin.com/?gist=6079475). Just
   include it in one of your require bin demos like this:
 
-  ```js
-  var console = require('demo-console');
-  ```
-  **/
+  ## Example Usage
 
-  /**
-  ## log(data)
+  <<< demo/index.js
 
-  You know, log stuff, like...
-
-  Strings:
-
-  ```js
-  console.log('hello');
-  ```
-
-  Numbers:
-
-  ```js
-  console.log(5);
-  ```
-
-  Arrays:
-
-  ```js
-  console.log([1, 2, 3]);
-  ```
-
-  Objects:
-
-  ```js
-  console.log({ name: 'Damon' });
-  ```
 **/
 exports.log = function() {
   var item = document.createElement('li');
