@@ -7,7 +7,7 @@ var items;
 
 var fs = require('fs');
 var themes = {
-  simple: fs.readFileSync('./themes/simple.css', 'utf8')
+  simple: fs.readFileSync(__dirname + '/themes/simple.css', 'utf8')
 };
 
 /**
