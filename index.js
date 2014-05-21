@@ -47,6 +47,9 @@ exports.log = function() {
   setTimeout(function() {
     items.parentNode.scrollTop = items.offsetHeight;
   }, 100);
+
+  // pass the call through to the original window console
+  window.console.log.apply(window.console, arguments);
 };
 
 /**
