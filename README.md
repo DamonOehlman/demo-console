@@ -36,7 +36,13 @@ console.log('hello', { name: 'Damon' });
 
 ```
 
-## useTheme(name)
+## Reference
+
+### console.log()
+
+As per the browser `console.log` statement
+
+### console.useTheme(name)
 
 Tell the demo console that you wish to use a particular theme.
 

@@ -20,6 +20,14 @@ var themes = {
 
   <<< demo/index.js
 
+  ## Reference
+
+**/
+
+/**
+  ### console.log()
+
+  As per the browser `console.log` statement
 **/
 exports.log = function() {
   var item = document.createElement('li');
@@ -42,9 +50,9 @@ exports.log = function() {
 };
 
 /**
-## useTheme(name)
+  ### console.useTheme(name)
 
-Tell the demo console that you wish to use a particular theme.
+  Tell the demo console that you wish to use a particular theme.
 **/
 exports.useTheme = function(name) {
   theme = initTheme(name);
