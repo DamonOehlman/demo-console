@@ -23,3 +23,6 @@ console.log('hello', { name: 'Damon' });
 
 // check a multiline strine displays as expected
 console.log('hi\nthere');
+
+// display an error
+console.error('This broke: ', new Error('oops'));

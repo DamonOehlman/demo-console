@@ -35,6 +35,10 @@ div.democonsole ul li > * {
   margin-right: 8px;
 }
 
+div.democonsole ul li.error:before {
+  content: '!';
+}
+
 span[data-type=""] {
   font-weight: bold;
 }
@@ -50,6 +54,10 @@ span[data-type="string"] {
 
 span[data-type="key"] {
   vertical-align: top;
+}
+
+span[data-type="error"] {
+  color: red;
 }
 
 div[data-type="object"] {

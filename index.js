@@ -29,7 +29,7 @@ var themes = {
 
   As per the browser `console.log` statement
 **/
-exports.log = function() {
+var log = exports.log = function() {
   var item = document.createElement('li');
 
   // ensure we have items
@@ -41,6 +41,11 @@ exports.log = function() {
   // initialise the item
   item.innerHTML = [].slice.call(arguments).map(renderData).join(' ');
 
+  // if we have a class add the class
+  if (this && this.class) {
+    item.classList.add(this.class);
+  }
+
   // add to the list
   items.appendChild(item);
 
@@ -50,6 +55,10 @@ exports.log = function() {
 
   // pass the call through to the original window console
   window.console.log.apply(window.console, arguments);
+};
+
+exports.error = function() {
+  log.apply({ class: 'error' }, arguments);
 };
 
 /**
@@ -136,6 +145,9 @@ function renderData(data, index) {
   }
   else if (data === null) {
     return span('null', 'null');
+  }
+  else if (data instanceof Error) {
+    return span(data.toString(), 'error');
   }
   else if (data instanceof Window) {
     return span('window', 'window');
