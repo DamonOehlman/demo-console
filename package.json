@@ -1,6 +1,6 @@
 {
   "name": "demo-console",
-  "version": "1.1.1",
+  "version": "1.2.0",
   "description": "A demonstration console for browser demos (useful for working with requirebin)",
   "main": "index.js",
   "scripts": {
@@ -21,7 +21,9 @@
     "url": "https://github.com/DamonOehlman/demo-console/issues"
   },
   "browserify": {
-    "transform": [ "brfs" ]
+    "transform": [
+      "brfs"
+    ]
   },
   "dependencies": {
     "brfs": "^1"
