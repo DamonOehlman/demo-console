@@ -6,4 +6,5 @@ console.log([1, 2, 3]);
 console.log({ name: 'Damon' });
 console.log(document);
 console.log({ a: [1, 2, 3, 4], b: true, c: { d: 'hello', e: false, f: [1, 2, 3, 4] }});
+console.log(['a', 'b', 'c']);
 console.log('hello', { name: 'Damon' });

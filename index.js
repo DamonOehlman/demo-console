@@ -125,7 +125,9 @@ function initTheme(theme) {
   return stylesheet;
 }
 
-function renderData(data) {
+function renderData(data, index) {
+  var initialItem = index === 0;
+
   function extractData(key) {
     var hasSpace = reSpace.test(key);
     var quoteChar = hasSpace ? '\'' : '';
@@ -143,10 +145,12 @@ function renderData(data) {
     return span(data, 'boolean');
   }
   else if (Array.isArray(data)) {
-    return span('[') + data.map(renderData).join(', ') + span(']');
+    return span('[') + data.map(function(entry) {
+      return renderData(entry);
+    }).join(', ') + span(']');
   }
   else if (typeof data == 'string' || (data instanceof String)) {
-    return span('\'' + data + '\'', 'string');
+    return span(initialItem ? data : ('\'' + data + '\''), 'string');
   }
   else if (data === null) {
     return span('null', 'null');

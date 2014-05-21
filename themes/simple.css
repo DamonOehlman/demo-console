@@ -33,7 +33,7 @@ div.democonsole ul li:before {
 }
 
 div.democonsole ul li > * {
-  margin-right: 5px;
+  margin-right: 8px;
 }
 
 span[data-type=""] {
