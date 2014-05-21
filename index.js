@@ -1,51 +1,54 @@
 /* jshint node: true */
 'use strict';
 
-var themeBase = '//rawgithub.com/DamonOehlman/demo-console/master/';
 var reSpace = /\s/;
 var theme;
 var items;
 
-/**
-# demo-console
-
-Show a demo console when working with [requirebin](http://requirebin.com/?gist=6079475). Just 
-include it in one of your require bin demos like this:
-
-```js
-var console = require('demo-console');
-```
-**/
+var fs = require('fs');
+var themes = {
+  simple: fs.readFileSync('./themes/simple.css', 'utf8')
+};
 
 /**
-## log(data)
+  # demo-console
 
-You know, log stuff, like...
+  Show a demo console when working with [requirebin](http://requirebin.com/?gist=6079475). Just
+  include it in one of your require bin demos like this:
 
-Strings:
+  ```js
+  var console = require('demo-console');
+  ```
+  **/
 
-```js
-console.log('hello');
-```
+  /**
+  ## log(data)
 
-Numbers:
+  You know, log stuff, like...
 
-```js
-console.log(5);
-```
+  Strings:
 
-Arrays:
+  ```js
+  console.log('hello');
+  ```
 
-```js
-console.log([1, 2, 3]);
-```
+  Numbers:
 
-Objects:
+  ```js
+  console.log(5);
+  ```
 
-```js
-console.log({ name: 'Damon' });
-```
+  Arrays:
 
+  ```js
+  console.log([1, 2, 3]);
+  ```
+
+  Objects:
+
+  ```js
+  console.log({ name: 'Damon' });
+  ```
 **/
 exports.log = function(data) {
   var item = document.createElement('li');
@@ -111,10 +114,9 @@ function initTheme(theme) {
   }
 
   // create a link element to bring the demo console style in
-  stylesheet = document.createElement('link');
+  stylesheet = document.createElement('style');
   stylesheet.id = 'democonsole-theme';
-  stylesheet.setAttribute('rel', 'stylesheet');
-  stylesheet.setAttribute('href', themeBase + 'themes/' + (theme || 'default') + '.css');
+  stylesheet.innerText = theme || themes.simple;
 
   // add to the dom
   document.head.appendChild(stylesheet);

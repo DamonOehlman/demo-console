@@ -20,6 +20,11 @@
   "bugs": {
     "url": "https://github.com/DamonOehlman/demo-console/issues"
   },
-  "dependencies": {},
+  "browserify": {
+    "transform": [ "brfs" ]
+  },
+  "dependencies": {
+    "brfs": "^1"
+  },
   "devDependencies": {}
 }
